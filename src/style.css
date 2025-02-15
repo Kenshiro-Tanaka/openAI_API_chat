@@ -1,0 +1,142 @@
+/* 基本的なリセットとレイアウト設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../public/background.png'); /* 背景画像 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #2d2d2d; /* 画像が読み込めなかった場合のフォールバック */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+/* チャット全体のスタイル（透過追加） */
+.chat-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明の白 */
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px); /* 背景をぼかして高級感アップ */
+}
+
+/* チャットタイトル */
+.chat-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+/* チャットボックス（少し透過） */
+.chat-box {
+    height: 500px;
+    overflow-y: auto;
+    background-color: rgba(247, 247, 247, 0.6); /* 透過度を調整 */
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ユーザーのメッセージ */
+.chat-box .user-message {
+    align-self: flex-end;
+    background-color: rgba(52, 152, 219, 0.9); /* ほぼ不透明 */
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 75%;
+    margin-bottom: 10px;
+}
+
+/* AIのメッセージ */
+.chat-box .ai-message {
+    align-self: flex-start;
+    background-color: rgba(142, 68, 173, 0.9); /* ほぼ不透明 */
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 75%;
+    margin-bottom: 10px;
+}
+
+
+/* 入力エリア */
+.input-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.input-box {
+    flex: 1;
+    padding: 15px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-box:focus {
+    border-color: #3498db;
+}
+
+/* 送信ボタン */
+.send-btn {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.send-btn:hover {
+    background: linear-gradient(135deg, #2980b9, #1c6ea4);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* 履歴を消すボタンのデザイン */
+#clear-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#clear-btn:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+

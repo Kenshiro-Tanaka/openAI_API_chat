@@ -1,0 +1,16 @@
+# 環境設定ファイル
+config/.env
+
+# node_modules フォルダ (npm でインストールされるパッケージ)
+node_modules/
+
+# 画像ファイル
+*.png
+*.jpg
+
+# ログファイル (必要に応じて追加)
+*.log
+
+# OS固有のファイル
+.DS_Store  # macOS
+Thumbs.db  # Windows
